@@ -40,7 +40,7 @@ MUSICBRAINZ_DELAY = 1.0  # MusicBrainz requires 1 request per second
 LASTFM_DELAY = 0.2
 
 # User agent (required by MusicBrainz)
-USER_AGENT = "ArtistBioFetcher/1.0 (https://github.com/yourusername/databasetest)"
+USER_AGENT = "ArtistBioFetcher/1.0 (https://github.com/J-S-Wijnbeek/databasetest)"
 
 class BiographyFetcher:
     def __init__(self, lastfm_api_key: Optional[str] = None):
@@ -203,7 +203,10 @@ class BiographyFetcher:
                 details.append(f"Genres: {genres}")
             
             if details:
-                bio_parts.append(' '.join(details) + '.')
+                details_text = ' '.join(details)
+                if not details_text.endswith('.'):
+                    details_text += '.'
+                bio_parts.append(details_text)
         
         # Combine all parts
         if bio_parts:
@@ -223,11 +226,11 @@ def read_artists_from_file(filepath: str) -> List[Tuple[int, str]]:
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
         for line in f:
             if 'INSERT [dbo].[Artist]' in line and 'VALUES' in line:
-                # Extract ID and Name
-                match = re.search(r'VALUES \((\d+), N\'([^\']+)\'', line)
+                # Extract ID and Name - handle escaped quotes in artist names
+                match = re.search(r'VALUES \((\d+), N\'((?:[^\']|\'\')*?)\'', line)
                 if match:
                     artist_id = int(match.group(1))
-                    name = match.group(2)
+                    name = match.group(2).replace("''", "'")  # Unescape SQL quotes
                     artists.append((artist_id, name))
     
     return artists
@@ -308,6 +311,14 @@ def main():
     # Read artists from SQL file
     print("Reading artists from SQL file...")
     sql_file = "top2000_all_artists_songs 1 (1).sql"
+    
+    # Check if file exists
+    import os
+    if not os.path.exists(sql_file):
+        print(f"ERROR: File '{sql_file}' not found!")
+        print("Please ensure you're running this script from the repository root directory.")
+        sys.exit(1)
+    
     artists = read_artists_from_file(sql_file)
     print(f"Found {len(artists)} artists to process\n")
     

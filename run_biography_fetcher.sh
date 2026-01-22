@@ -20,9 +20,16 @@ echo ""
 # Check requests library
 if ! python3 -c "import requests" 2>/dev/null; then
     echo "⚠️  'requests' library not found"
-    echo "   Installing..."
-    pip3 install requests
+    read -p "Install 'requests' library? (y/n) " -n 1 -r
     echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "   Installing..."
+        pip3 install --user requests
+        echo ""
+    else
+        echo "ERROR: 'requests' library is required"
+        exit 1
+    fi
 fi
 
 echo "✓ Required libraries installed"
