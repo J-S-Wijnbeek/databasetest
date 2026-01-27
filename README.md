@@ -16,6 +16,11 @@ This repository contains SQL scripts for managing a music database with artists 
 - **`update_10cc_artist.sql`** - Example UPDATE for single artist (10cc)
 - **`insert_all_artists_with_biographies.sql`** - INSERT statements for new databases
 
+### Photo/Picture Files 🖼️ (NEW!)
+- **`insert_artist_photos_only.sql`** - ⭐ INSERT statements with ONLY photos (2,325 artists) - NO Biography, NO Wiki
+- **`update_artist_photos.sql`** - UPDATE statements for photos only (2,364 artists)
+- **`INSERT_PHOTOS_ONLY_README.md`** - Complete guide for using the INSERT photos script
+
 ### API Biography Fetcher (NEW!)
 - **`fetch_artist_biographies.py`** - 🚀 Python script to fetch detailed biographies from Wikipedia/MusicBrainz/Last.fm APIs
 - **`run_biography_fetcher.sh`** - Quick start script for running the biography fetcher
@@ -63,11 +68,22 @@ Use SQL templates to update specific artists:
 2. Open **`update_artist_biography_photo.sql`** for templates
 3. Customize and execute queries
 
+## Quick Start - Artist Photos Only 🖼️
+
+Want to INSERT only pictures/photos without Biography or Wiki data?
+
+1. Open **`insert_artist_photos_only.sql`** in SQL Server Management Studio
+2. Execute against your database
+3. ✓ Done! 2,325 artists will have photos (NO Biography, NO Wiki - ONLY pictures!)
+
+See [`INSERT_PHOTOS_ONLY_README.md`](./INSERT_PHOTOS_ONLY_README.md) for complete instructions.
+
 ## What's Included
 
 - **2,366 unique artists** in database
 - **100 detailed biographies** (major artists like Queen, Beatles, Led Zeppelin, etc.)
 - **2,266 contextual biographies** (all other artists)
+- **2,325 artist photos** (Spotify CDN URLs) - Available as INSERT or UPDATE
 - **API fetcher** for generating detailed biographies from external sources
 - **Multiple approaches** to suit your needs
 
