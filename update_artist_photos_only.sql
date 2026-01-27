@@ -1,11 +1,3 @@
--- ============================================
--- SQL Script to UPDATE Artist Photos Only
--- ============================================
--- This script provides UPDATE statements with ONLY the Photo field
--- NO Biography, NO Wiki - ONLY Pictures
--- Total Artists with Photos: 2325
--- ============================================
-
 BEGIN TRANSACTION;
 
 UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/b040846ceba13c3e9c125d68389491094e7f2982' WHERE [ArtistId] = 1;
@@ -18,8 +10,25 @@ UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebe3
 UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebe4cea917b68726aadb4854b8' WHERE [ArtistId] = 8;
 UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/afde2fdd14f8c8ca23393f257e3a369a234a24b6' WHERE [ArtistId] = 9;
 UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb2af24c397e6ba11f49516dd9' WHERE [ArtistId] = 10;
-
--- Continue for all 2325 artists with the same pattern...
--- (Include all the UPDATE statements for every artist ID from the original INSERT script)
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb440959e022afc20e819050bd' WHERE [ArtistId] = 11;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb3ce1e2a99cffc7c662938b01' WHERE [ArtistId] = 12;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebb34057d59275011032ef8bc8' WHERE [ArtistId] = 13;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb8beccf59fd551fff989deae1' WHERE [ArtistId] = 14;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb144d2bd5d672fcb0f38be00b' WHERE [ArtistId] = 15;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb97885ce689d644c91dfba05c' WHERE [ArtistId] = 16;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebe62be215d2ee31bcd97edaba' WHERE [ArtistId] = 17;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb7408e563fff25290f24f505a' WHERE [ArtistId] = 18;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb4bdaa8c5e65b64f50549c393' WHERE [ArtistId] = 19;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6772690000c46ca60e8f215103f6841d8a83f0' WHERE [ArtistId] = 20;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebd7b257fdbe94a7e59687c03a' WHERE [ArtistId] = 21;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/3e90d18b7375a0e78340d23f72822646c4cc3b70' WHERE [ArtistId] = 22;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb6334ab6a83196f36475ada7f' WHERE [ArtistId] = 23;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/eebed895cad509b17c7c6faf47f21f1fc35e8829' WHERE [ArtistId] = 24;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab67616d0000b273aa25c50cd245eee976e4b055' WHERE [ArtistId] = 25;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eba59a5bcab211f964fe9bfb06' WHERE [ArtistId] = 26;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb056ca819a112e96edc3de394' WHERE [ArtistId] = 27;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5eb0dc33a1c53bb58a84b45d6a7' WHERE [ArtistId] = 28;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/ab6761610000e5ebfd3d0343fdeb948bf9590c77' WHERE [ArtistId] = 29;
+UPDATE [dbo].[Artist] SET [Photo] = N'https://i.scdn.co/image/b5aae2067db80f694a980e596e7f49618c1206c9' WHERE [ArtistId] = 30;
 
 COMMIT TRANSACTION;
