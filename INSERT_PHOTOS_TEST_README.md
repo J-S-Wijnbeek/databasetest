@@ -46,7 +46,7 @@ If you're using a different database name:
 ### Transaction Support
 - All inserts are wrapped in a transaction
 - If any insert fails, all changes are rolled back
-- Automatically commits on success
+- Transaction is committed explicitly at the end of the script
 
 ### Identity Insert
 - The script uses `SET IDENTITY_INSERT ON` to specify explicit ArtistId values
